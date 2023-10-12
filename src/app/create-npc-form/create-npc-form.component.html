@@ -1,0 +1,42 @@
+<p>create-npc-form works!</p>
+<form [formGroup]="npcForm" (ngSubmit)="onSubmit()">
+    <mat-card>
+        <mat-card-content>
+            <div class="input-group">
+                <mat-form-field appearance="fill">
+                    <mat-label>Prénom</mat-label>
+                    <input matInput formControlName="firstName" required>
+                    <mat-error *ngIf="firstNameControl.hasError('required') && firstNameControl.touched">Le prénom est requis.</mat-error>
+                </mat-form-field>
+                
+                <mat-form-field appearance="fill">
+                    <mat-label>Nom</mat-label>
+                    <input matInput formControlName="lastName" required>
+                    <mat-error *ngIf="lastNameControl.hasError('required') && lastNameControl.touched">Le nom est requis.</mat-error>
+                </mat-form-field>
+            </div>
+            
+            <div class="input-group">
+                <mat-form-field appearance="fill">
+                    <mat-label>Age</mat-label>
+                    <input matInput formControlName="age" required>
+                    <mat-error *ngIf="ageControl.hasError('required') && ageControl.touched">L'âge est requis.</mat-error>
+                    <mat-error *ngIf="ageControl.hasError('notInteger') && ageControl.touched">L'âge doit être un entier.</mat-error>
+                </mat-form-field>
+            
+                <mat-form-field appearance="fill">
+                    <mat-label>Occupation</mat-label>
+                    <input matInput formControlName="occupation" required>
+                    <mat-error *ngIf="occupationControl.hasError('required') && occupationControl.touched">Le occupation est requis.</mat-error>
+                </mat-form-field>
+            </div>          
+        </mat-card-content>
+        <mat-card-actions>
+            <div class="button-container">
+                <button class="create-npc-button" mat-button type="submit">Créer PNJ</button>
+            </div>
+        </mat-card-actions>
+    </mat-card>
+    
+  </form>
+  

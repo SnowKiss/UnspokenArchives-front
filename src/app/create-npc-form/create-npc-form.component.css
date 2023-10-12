@@ -1,0 +1,33 @@
+.form-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+mat-form-field {
+    width: 100%;
+    max-width: 300px; 
+    margin: 0 auto; 
+}
+
+.input-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.create-npc-button {
+    background-color: #4CAF50; /* Une couleur verte */
+    color: white; /* Texte blanc */
+    padding: 14px 40px; /* Padding plus grand */
+    border: none; /* Enlever les bordures */
+    border-radius: 4px; /* Coins arrondis */
+    text-transform: uppercase; /* Texte en majuscules */
+    font-weight: bold; /* Texte en gras */
+    transition: background-color 0.3s ease; /* Transition douce lors du changement de couleur de fond */
+}
+
+.create-npc-button:hover {
+    background-color: #45a049; /* Une teinte de vert différente au survol */
+}

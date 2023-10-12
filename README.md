@@ -1,27 +1,54 @@
-# UnspokenArchives
+# Unspoken Archives
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.6.
+## Présentation du Projet
 
-## Development server
+"Unspoken Archives" est une application web conçue pour les amateurs de jeux de rôle (JDR) et les développeurs de jeux. Elle permet la génération automatique de profils de Personnages Non Joueurs (PNJ) avec des détails enrichis, y compris des noms, des backgrounds, des occupations, et plus encore, en utilisant l'intelligence artificielle.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Cette application est idéale pour les maîtres de jeu (MJ) qui ont besoin de créer rapidement des PNJ détaillés pour leurs campagnes de JDR, ou pour les développeurs de jeux cherchant à peupler leurs mondes de jeu avec des personnages uniques.
 
-## Code scaffolding
+## Technologies Utilisées
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Frontend: Angular
+- Backend: Java, Quarkus
+- IA générative (pour la création de détails de PNJ)
+- Autres bibliothèques: [Ajouter ici toute autre bibliothèque/framework pertinent]
 
-## Build
+## Fonctionnalités
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Génération de noms et de profils de PNJ.
+- Création de backgrounds détaillés et cohérents pour les PNJ.
+- [Ajoutez d'autres fonctionnalités ici]
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Décrivez ici les étapes pour installer votre projet, par exemple :
 
-## Running end-to-end tests
+1. Clonez le dépôt sur votre machine locale en utilisant `git clone [URL du dépôt]`.
+2. Assurez-vous d'avoir [Node.js](https://nodejs.org/) installé.
+3. Naviguez jusqu'au dossier du projet et exécutez `npm install` pour installer les dépendances.
+4. [Toute autre étape nécessaire].
+5. Exécutez `ng serve` pour lancer un serveur de développement. Ouvrez `http://localhost:4200/` dans votre navigateur.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Utilisation
 
-## Further help
+[Incluez ici une brève description de la façon d'utiliser l'application, comment générer des PNJ, où trouver les informations générées, etc.]
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Contribution
+
+Les contributions sont ce qui fait de la communauté open source un endroit incroyable pour apprendre, inspirer et créer. Toute contribution que vous apportez est **grandement appréciée**.
+
+1. Forkez le projet
+2. Créez votre branche de fonctionnalité (`git checkout -b feature/AmazingFeature`)
+3. Committez vos changements (`git commit -m 'Ajout de quelques AmazingFeature'`)
+4. Poussez votre branche (`git push origin feature/AmazingFeature`)
+5. Ouvrez une Pull Request
+
+## Licence
+
+Distribué sous la licence MIT. Voir `LICENSE` pour plus d'informations.
+
+## Contact
+
+John SCHMITT - john.schmitt@skaldia.com - https://www.linkedin.com/in/johnschmittfr/
+
+Lien du projet : https://github.com/SnowKiss/UnspokenArchives-front
