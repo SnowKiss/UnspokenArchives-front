@@ -1,1 +1,27 @@
-<p>npc-profile works!</p>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>ETAT DE RHODE ISLAND - DÉPARTEMENT DE SANTÉ MENTALE</h1>
+        </header>
+        <div class="profile-content">
+            <img class="profile-image" [src]="npc.avatarUrl" alt="Photo de {{ npc.firstName }} {{ npc.lastName }}">
+            <div class="profile-details">
+                <h2>{{ npc.firstName }} {{ npc.lastName }}</h2>
+                <p><strong>Identification :</strong> {{ npc.id }}</p>
+                <p><strong>Date de naissance :</strong> {{ npc.birthDate }}</p>
+                <p><strong>Âge :</strong> {{ npc.age }}</p>
+                <p><strong>Occupation :</strong> {{ npc.occupation }}</p>
+                <p><strong>Background :</strong> {{ npc.background }}</p>
+                <!-- ... autres informations du PNJ ... -->
+            </div>
+        </div>
+        <div class="profile-condition">
+            <p><strong>Condition physique :</strong> {{ npc.physicalCondition }}</p>
+            <p><strong>Condition psychologique :</strong> {{ npc.psychologicalCondition }}</p>
+        </div>
+        <footer>
+            <!-- ... contenu du pied de page ... -->
+        </footer>
+    </div>
+</body>
+

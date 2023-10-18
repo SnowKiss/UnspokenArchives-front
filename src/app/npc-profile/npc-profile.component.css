@@ -1,0 +1,101 @@
+body {
+    font-family: "Courier New", Courier, monospace;
+}
+
+.main-container {
+    width: 60%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid black;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 18px;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.profile-content {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    flex: 1;
+    width: 120px;
+    height: auto; /* Ajuste la hauteur en fonction de la largeur, en conservant le rapport d'aspect */
+    margin-right: 20px;
+    border: 1px solid black;
+}
+
+.profile-details {
+    flex: 2;
+}
+
+.profile-details h2 {
+    font-size: 24px;
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+}
+
+.profile-details p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.profile-condition {
+    border-top: 2px solid black;
+    padding-top: 10px;
+}
+
+.profile-condition p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+footer {
+    border-top: 2px solid black;
+    padding-top: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+}
+
+.typewriter h1 {
+    font-family: "Courier New", Courier, monospace;
+    width: fit-content; /* Adapte la largeur à la longueur du texte */
+    overflow: hidden; /* Assure que le contenu est masqué avant d'être complètement "tapé" */
+    border-right: .15em solid black; /* Simule le curseur de la machine à écrire */
+    white-space: nowrap; /* Garde le texte sur une seule ligne */
+    margin: 0 auto; /* Centre le texte */
+    letter-spacing: .15em; /* Espacement entre les lettres */
+    animation: 
+        typing 3.5s steps(30, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* Appliquez la classe "typewriter" à l'élément que vous voulez animer */

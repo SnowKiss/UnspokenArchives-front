@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ApiService } from '../api.service'; // Ajustez le chemin d'accès en fonction de votre structure de fichiers
-
+import { NpcDataService } from '../npc-data.service';
 
 @Component({
   selector: 'app-create-npc-form',
@@ -11,7 +10,7 @@ import { ApiService } from '../api.service'; // Ajustez le chemin d'accès en fo
 export class CreateNpcFormComponent {
   npcForm: FormGroup; // Déclarez seulement ici
 
-  constructor(private apiService: ApiService) {
+  constructor(private npcDataService: NpcDataService) {
     // Déplacez l'initialisation de npcForm dans le constructeur
     this.npcForm = new FormGroup({
       firstName: new FormControl('', [Validators.required]),
@@ -23,7 +22,7 @@ export class CreateNpcFormComponent {
   }
 
   onSubmit() {
-    this.apiService.createNpc(this.npcForm.value).subscribe(
+    this.npcDataService.createNpc(this.npcForm.value).subscribe(
       (response: any) => {
         console.log(response);
         // Autres manipulations de la réponse...

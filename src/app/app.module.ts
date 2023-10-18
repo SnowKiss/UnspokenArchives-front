@@ -12,13 +12,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
+import { NpcListComponent } from './npc-list/npc-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateNpcFormComponent,
     NpcProfileComponent,
-    NavigationComponent
+    NavigationComponent,
+    NpcListComponent
   ],
   imports: [
     BrowserModule,

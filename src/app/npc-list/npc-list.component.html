@@ -1,0 +1,27 @@
+<p>npc-list works!</p>
+<div class="search-container">
+    <input [formControl]="searchControl" placeholder="Recherche...">
+</div>
+  
+  
+
+<!-- Dans npc-list.component.html -->
+<table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Prénom</th>
+        <th>Occupation</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let npc of npcs">
+        <td>{{ npc.firstName }}</td>
+        <td>{{ npc.lastName }}</td>
+        <td>{{ npc.occupation }}</td>
+        <td><a [routerLink]="['/npc', npc.id]">Voir le profil</a></td>
+      </tr>
+    </tbody>
+  </table>
+  
