@@ -2,40 +2,52 @@
 
 ## Présentation du Projet
 
-"Unspoken Archives" est une application web conçue pour les amateurs de jeux de rôle (JDR) et les développeurs de jeux. Elle permet la génération automatique de profils de Personnages Non Joueurs (PNJ) avec des détails enrichis, y compris des noms, des backgrounds, des occupations, et plus encore, en utilisant l'intelligence artificielle.
+"Unspoken Archives" est une application web dynamique conçue pour les amateurs de jeux de rôle (JDR) et les développeurs de jeux. Elle offre la possibilité de générer automatiquement des profils de Personnages Non Joueurs (PNJ) avec des détails enrichis, y compris des noms, des backgrounds, des occupations, et bien plus, le tout alimenté par l'intelligence artificielle.
 
-Cette application est idéale pour les maîtres de jeu (MJ) qui ont besoin de créer rapidement des PNJ détaillés pour leurs campagnes de JDR, ou pour les développeurs de jeux cherchant à peupler leurs mondes de jeu avec des personnages uniques.
+Cette plateforme est un outil incontournable pour les maîtres de jeu (MJ) nécessitant des PNJ détaillés pour leurs campagnes de JDR, ou pour les développeurs de jeux souhaitant intégrer une diversité de personnages uniques dans leurs univers virtuels.
 
 ## Technologies Utilisées
 
-- Frontend: Angular
-- Backend: Java, Quarkus
-- IA générative (pour la création de détails de PNJ)
-- Autres bibliothèques: [Ajouter ici toute autre bibliothèque/framework pertinent]
+Ce projet est réalisé avec une architecture en microservices, et cette partie concerne spécifiquement le frontend. Le backend est géré séparément par une application Java/Quarkus qui expose des API Rest.
+
+- **Frontend:**
+  - Angular 16
+  - TypeScript 5
+  - RxJS 7
+  - HTML 5
+  - CSS3
+
+- **Backend:**
+  - Java
+  - Quarkus
+
+- **IA Générative:** Utilisée pour la création automatique de détails de PNJ.
+
+- **Autres bibliothèques:** [TODO]
 
 ## Fonctionnalités
 
-- Génération de noms et de profils de PNJ.
-- Création de backgrounds détaillés et cohérents pour les PNJ.
-- [Ajoutez d'autres fonctionnalités ici]
+- Génération instantanée de profils et d'illustration de PNJ.
+- Élaboration de backgrounds détaillés et cohérents pour chaque PNJ.
+- [TODO]
 
 ## Installation
 
-Décrivez ici les étapes pour installer votre projet, par exemple :
+Pour installer et utiliser ce projet localement, suivez les étapes ci-dessous :
 
 1. Clonez le dépôt sur votre machine locale en utilisant `git clone [URL du dépôt]`.
-2. Assurez-vous d'avoir [Node.js](https://nodejs.org/) installé.
-3. Naviguez jusqu'au dossier du projet et exécutez `npm install` pour installer les dépendances.
+2. Assurez-vous d'avoir [Node.js](https://nodejs.org/) (v18.x) installé.
+3. Naviguez jusqu'au dossier du projet et exécutez `npm install` pour installer toutes les dépendances nécessaires.
 4. [Toute autre étape nécessaire].
-5. Exécutez `ng serve` pour lancer un serveur de développement. Ouvrez `http://localhost:4200/` dans votre navigateur.
+5. Pour lancer l'application, exécutez `ng serve` dans votre terminal. Ensuite, ouvrez votre navigateur et accédez à `http://localhost:4200/`.
 
 ## Utilisation
 
-[Incluez ici une brève description de la façon d'utiliser l'application, comment générer des PNJ, où trouver les informations générées, etc.]
+[Incluez ici une brève description ou un tutoriel expliquant comment les utilisateurs peuvent générer des PNJ, où trouver les informations générées, comment sauvegarder ou modifier les PNJ, etc.]
 
 ## Contribution
 
-Les contributions sont ce qui fait de la communauté open source un endroit incroyable pour apprendre, inspirer et créer. Toute contribution que vous apportez est **grandement appréciée**.
+Nous encourageons la communauté à contribuer au projet. Toute contribution que vous apportez sera **grandement appréciée**.
 
 1. Forkez le projet
 2. Créez votre branche de fonctionnalité (`git checkout -b feature/AmazingFeature`)
@@ -45,10 +57,10 @@ Les contributions sont ce qui fait de la communauté open source un endroit incr
 
 ## Licence
 
-Distribué sous la licence MIT. Voir `LICENSE` pour plus d'informations.
+Ce projet est sous licence MIT. Pour plus d'informations, veuillez consulter le fichier `LICENSE`.
 
 ## Contact
 
-John SCHMITT - john.schmitt@skaldia.com - https://www.linkedin.com/in/johnschmittfr/
+John SCHMITT - john.schmitt@skaldia.com - [LinkedIn](https://www.linkedin.com/in/johnschmittfr/)
 
-Lien du projet : https://github.com/SnowKiss/UnspokenArchives-front
+Lien du projet : [https://github.com/SnowKiss/UnspokenArchives-front](https://github.com/SnowKiss/UnspokenArchives-front)
