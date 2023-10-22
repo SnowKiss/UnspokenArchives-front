@@ -1,33 +1,81 @@
-.form-container {
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    gap: 20px; 
+.create-npc-container {
+    width: 50%;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-mat-form-field {
-    width: 100%;
-    max-width: 300px; 
-    margin: 0 auto; 
+.form-header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.input-group {
+.field-group {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    margin-bottom: 20px;
 }
 
-.create-npc-button {
-    background-color: #4CAF50; /* Une couleur verte */
-    color: white; /* Texte blanc */
-    padding: 14px 40px; /* Padding plus grand */
-    border: none; /* Enlever les bordures */
-    border-radius: 4px; /* Coins arrondis */
-    text-transform: uppercase; /* Texte en majuscules */
-    font-weight: bold; /* Texte en gras */
-    transition: background-color 0.3s ease; /* Transition douce lors du changement de couleur de fond */
+.form-field {
+    width: 45%;  
 }
 
-.create-npc-button:hover {
-    background-color: #45a049; /* Une teinte de vert différente au survol */
+.form-field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.button-container {
+    text-align: center;
+}
+
+.submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    z-index: 1000; /* Assurez-vous qu'il s'affiche au-dessus de tout le reste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-indicator {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    text-align: center;
 }

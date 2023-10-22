@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { NpcDataService } from '../npc-data.service';
+import { Router } from '@angular/router';
+
 
 interface Npc {
   id: number; // ou string, selon le type de votre id
@@ -21,13 +23,20 @@ export class NpcListComponent implements OnInit {
   filteredNpcList: Npc[] = this.npcs;
   searchControl = new FormControl();
 
-  constructor(private npcDataService: NpcDataService) { }
+  constructor(private npcDataService: NpcDataService, private router: Router) { }
 
   ngOnInit(): void {
     this.npcDataService.getNpcs().subscribe(
-      data => this.npcs = data,
+      data => {
+        this.npcs = data;
+        this.filteredNpcList = [...this.npcs];  // Initialise filteredNpcList
+      },
       error => console.error(error)
     );
+
+    this.searchControl.valueChanges.pipe(
+      debounceTime(300)  // Attend 300 ms après la dernière modification
+    ).subscribe(query => this.onSearch(query));
   }
 
   onSearch(query: string): void {
@@ -38,4 +47,9 @@ export class NpcListComponent implements OnInit {
              npc.occupation.toLowerCase().includes(lowerCaseQuery)
     );
   }
+
+  viewProfile(npc: Npc): void {
+    this.router.navigate(['/npc', npc.id]);
+  }
+  
 }

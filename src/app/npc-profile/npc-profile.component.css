@@ -33,7 +33,7 @@ header h1 {
 
 .profile-image {
     flex: 1;
-    width: 120px;
+    width: 150px;
     height: auto; /* Ajuste la hauteur en fonction de la largeur, en conservant le rapport d'aspect */
     margin-right: 20px;
     border: 1px solid black;
@@ -85,7 +85,7 @@ footer {
     50% { border-color: black; }
 }
 
-.typewriter h1 {
+.typewriter h2 {
     font-family: "Courier New", Courier, monospace;
     width: fit-content; /* Adapte la largeur à la longueur du texte */
     overflow: hidden; /* Assure que le contenu est masqué avant d'être complètement "tapé" */
@@ -98,4 +98,43 @@ footer {
         blink-caret .75s step-end infinite;
 }
 
-/* Appliquez la classe "typewriter" à l'élément que vous voulez animer */
+.image-container {
+    position: relative;
+    display: inline-block;  /* pour que la taille du conteneur corresponde à celle de l'image */
+}
+
+.icon-button {
+    position: absolute;
+    bottom: 10px;  /* ajustez ces valeurs selon vos besoins */
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5);  /* un arrière-plan semi-transparent pour la visibilité */
+    border: none;
+    border-radius: 50%;  /* rend le bouton circulaire */
+    padding: 5px;  /* ajoutez un peu d'espace autour de l'icône */
+    cursor: pointer;
+}
+
+.icon-button img {
+    width: 24px;
+    height: 24px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    z-index: 1000; /* Assurez-vous qu'il s'affiche au-dessus de tout le reste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loading-indicator {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    text-align: center;
+}

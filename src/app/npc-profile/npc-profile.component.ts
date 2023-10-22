@@ -8,14 +8,23 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./npc-profile.component.css']
 })
 export class NpcProfileComponent implements OnInit {
+
+  loading: boolean = false;
+
   npc: any = {
       firstName: '',
       lastName: '',
       age: '',
+      birthDate: '',
       occupation: '',
       background: '',
-      avatarUrl: 'https://via.placeholder.com/150'  // une image placeholder
+      fileId: '',
+      physicalDescription: '',
+      psychologicalDescription: '',
+      portrait: 'https://via.placeholder.com/150'  // une image placeholder
   };
+
+  showModal: boolean = false;
 
   constructor(private npcDataService: NpcDataService, private route: ActivatedRoute) { }
 
@@ -27,4 +36,33 @@ export class NpcProfileComponent implements OnInit {
           });
       }
   }
+
+  openModal() {
+    this.showModal = true;
+  }
+
+  closeModal() {
+      this.showModal = false;
+  }
+
+  regenerateNpcImage() {
+      this.loading = true;  // Commencez le chargement
+      const npcId = this.npc.id;
+      this.npcDataService.regenerateImage(npcId).subscribe(
+        (response: any) => {
+          this.loading = false;
+          console.log(response);
+          const createdNpcImg = response.portrait;
+          this.npc.portrait = createdNpcImg;
+        },
+        (error: any) => {
+          this.loading = false;
+          console.error(error);
+          // Gestion des erreurs...
+        }
+        
+      );
+  }
+
+
 }

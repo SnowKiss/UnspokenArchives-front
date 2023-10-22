@@ -1,41 +1,53 @@
-<p>create-npc-form works!</p>
-<form [formGroup]="npcForm" (ngSubmit)="onSubmit()">
-    <mat-card>
-        <mat-card-content>
-            <div class="input-group">
-                <mat-form-field appearance="fill">
-                    <mat-label>Prénom</mat-label>
-                    <input matInput formControlName="firstName" required>
-                    <mat-error *ngIf="firstNameControl.hasError('required') && firstNameControl.touched">Le prénom est requis.</mat-error>
-                </mat-form-field>
-                
-                <mat-form-field appearance="fill">
-                    <mat-label>Nom</mat-label>
-                    <input matInput formControlName="lastName" required>
-                    <mat-error *ngIf="lastNameControl.hasError('required') && lastNameControl.touched">Le nom est requis.</mat-error>
-                </mat-form-field>
+<div class="create-npc-container">
+    <div class="form-header">
+        <h1>Créer un Nouveau PNJ</h1>
+    </div>
+    <div *ngIf="loading" class="overlay">
+        <div class="loading-indicator">Chargement...</div>
+    </div>
+
+    <form [formGroup]="npcForm" (ngSubmit)="onSubmit()">
+        <div class="field-group">
+            <div class="form-field">
+                <label for="firstName">Prénom</label>
+                <input id="firstName" formControlName="firstName" required>
+                <div *ngIf="firstNameControl.hasError('required') && firstNameControl.touched" class="error">
+                    Le prénom est requis.
+                </div>
             </div>
-            
-            <div class="input-group">
-                <mat-form-field appearance="fill">
-                    <mat-label>Age</mat-label>
-                    <input matInput formControlName="age" required>
-                    <mat-error *ngIf="ageControl.hasError('required') && ageControl.touched">L'âge est requis.</mat-error>
-                    <mat-error *ngIf="ageControl.hasError('notInteger') && ageControl.touched">L'âge doit être un entier.</mat-error>
-                </mat-form-field>
-            
-                <mat-form-field appearance="fill">
-                    <mat-label>Occupation</mat-label>
-                    <input matInput formControlName="occupation" required>
-                    <mat-error *ngIf="occupationControl.hasError('required') && occupationControl.touched">Le occupation est requis.</mat-error>
-                </mat-form-field>
-            </div>          
-        </mat-card-content>
-        <mat-card-actions>
-            <div class="button-container">
-                <button class="create-npc-button" mat-button type="submit">Créer PNJ</button>
+
+            <div class="form-field">
+                <label for="lastName">Nom</label>
+                <input id="lastName" formControlName="lastName" required>
+                <div *ngIf="lastNameControl.hasError('required') && lastNameControl.touched" class="error">
+                    Le nom est requis.
+                </div>
             </div>
-        </mat-card-actions>
-    </mat-card>
-  </form>
-  
+        </div>
+
+        <div class="field-group">
+            <div class="form-field">
+                <label for="age">Age</label>
+                <input id="age" formControlName="age" required>
+                <div *ngIf="ageControl.hasError('required') && ageControl.touched" class="error">
+                    L'âge est requis.
+                </div>
+                <div *ngIf="ageControl.hasError('notInteger') && ageControl.touched" class="error">
+                    L'âge doit être un entier.
+                </div>
+            </div>
+
+            <div class="form-field">
+                <label for="occupation">Occupation</label>
+                <input id="occupation" formControlName="occupation" required>
+                <div *ngIf="occupationControl.hasError('required') && occupationControl.touched" class="error">
+                    L'occupation est requise.
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button class="submit-button" type="submit">Créer PNJ</button>
+        </div>
+    </form>
+</div>

@@ -7,6 +7,7 @@ interface NpcData {
   firstName: string;
   lastName: string;
   occupation: string;
+  portrait: string;
 }
 
 @Injectable({
@@ -14,7 +15,7 @@ interface NpcData {
 })
 export class NpcDataService {
 
-  private apiUrl = 'http://localhost:3000/npcs';  // Remplacez par l'URL de votre API
+  private apiUrl = 'http://localhost:8080/npcs';  
 
   constructor(private http: HttpClient) {}
 
@@ -29,5 +30,10 @@ export class NpcDataService {
   getNpcs(): Observable<NpcData[]> {
     return this.http.get<NpcData[]>(this.apiUrl);
   }
+
+  regenerateImage(npcId: string): Observable<string> {
+    return this.http.put<string>(`${this.apiUrl}/${npcId}/regenerate-image`, null);
+}
+
 
 }

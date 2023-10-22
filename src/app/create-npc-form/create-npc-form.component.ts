@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NpcDataService } from '../npc-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-npc-form',
@@ -8,9 +9,10 @@ import { NpcDataService } from '../npc-data.service';
   styleUrls: ['./create-npc-form.component.css']
 })
 export class CreateNpcFormComponent {
-  npcForm: FormGroup; // Déclarez seulement ici
+  npcForm: FormGroup; 
+  loading = false;
 
-  constructor(private npcDataService: NpcDataService) {
+  constructor(private npcDataService: NpcDataService, private router: Router) {
     // Déplacez l'initialisation de npcForm dans le constructeur
     this.npcForm = new FormGroup({
       firstName: new FormControl('', [Validators.required]),
@@ -22,12 +24,17 @@ export class CreateNpcFormComponent {
   }
 
   onSubmit() {
+    this.loading = true;
+
     this.npcDataService.createNpc(this.npcForm.value).subscribe(
       (response: any) => {
+        this.loading = false;
         console.log(response);
-        // Autres manipulations de la réponse...
+        const createdNpcId = response.id;
+        this.router.navigate([`/npc/${createdNpcId}`]);
       },
       (error: any) => {
+        this.loading = false;
         console.error(error);
         // Gestion des erreurs...
       }

@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { NpcListComponent } from './npc-list/npc-list.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NpcListComponent } from './npc-list/npc-list.component';
     CreateNpcFormComponent,
     NpcProfileComponent,
     NavigationComponent,
-    NpcListComponent
+    NpcListComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

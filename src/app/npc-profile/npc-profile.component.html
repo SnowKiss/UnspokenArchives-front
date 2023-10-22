@@ -1,27 +1,39 @@
 <body>
+    <div *ngIf="loading" class="overlay">
+        <div class="loading-indicator">Chargement...</div>
+    </div>
     <div class="main-container">
         <header>
             <h1>ETAT DE RHODE ISLAND - DÉPARTEMENT DE SANTÉ MENTALE</h1>
         </header>
         <div class="profile-content">
-            <img class="profile-image" [src]="npc.avatarUrl" alt="Photo de {{ npc.firstName }} {{ npc.lastName }}">
+            <div class="image-container">
+                <img class="profile-image" [src]="npc.portrait" alt="Photo de {{ npc.firstName }} {{ npc.lastName }}" (click)="openModal()" />
+                <button class="icon-button" (click)="regenerateNpcImage()" title="Regenerate Image">
+                    <img src="assets/refresh-icon.svg" alt="Regenerate Image" />
+                </button>
+            </div>
+
             <div class="profile-details">
                 <h2>{{ npc.firstName }} {{ npc.lastName }}</h2>
-                <p><strong>Identification :</strong> {{ npc.id }}</p>
+                <p><strong>Identification :</strong> {{ npc.fileId }}</p>
                 <p><strong>Date de naissance :</strong> {{ npc.birthDate }}</p>
                 <p><strong>Âge :</strong> {{ npc.age }}</p>
                 <p><strong>Occupation :</strong> {{ npc.occupation }}</p>
-                <p><strong>Background :</strong> {{ npc.background }}</p>
                 <!-- ... autres informations du PNJ ... -->
             </div>
         </div>
         <div class="profile-condition">
-            <p><strong>Condition physique :</strong> {{ npc.physicalCondition }}</p>
-            <p><strong>Condition psychologique :</strong> {{ npc.psychologicalCondition }}</p>
+            <p><strong>Background :</strong> {{ npc.background }}</p>
+        </div>
+        <div class="profile-condition">
+            <p><strong>Condition physique :</strong> {{ npc.physicalDescription }}</p>
+            <p><strong>Condition psychologique :</strong> {{ npc.psychologicalDescription }}</p>
         </div>
         <footer>
             <!-- ... contenu du pied de page ... -->
         </footer>
     </div>
+    <app-modal [show]="showModal" [imageSrc]="npc.portrait" (closeEvent)="closeModal()"></app-modal>
 </body>
 

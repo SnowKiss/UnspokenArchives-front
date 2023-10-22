@@ -1,27 +1,25 @@
-<p>npc-list works!</p>
-<div class="search-container">
-    <input [formControl]="searchControl" placeholder="Recherche...">
-</div>
-  
-  
+<div class="npc-list-container">
+  <div class="header">
+      <h1>Liste des NPCs</h1>
+      <div class="search-container">
+          <input [formControl]="searchControl" placeholder="Recherche...">
+      </div>
+  </div>
 
-<!-- Dans npc-list.component.html -->
-<table>
-    <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Prénom</th>
-        <th>Occupation</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let npc of npcs">
-        <td>{{ npc.firstName }}</td>
-        <td>{{ npc.lastName }}</td>
-        <td>{{ npc.occupation }}</td>
-        <td><a [routerLink]="['/npc', npc.id]">Voir le profil</a></td>
-      </tr>
-    </tbody>
+  <table>
+      <thead>
+          <tr>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Occupation</th>
+          </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let npc of filteredNpcList" (click)="viewProfile(npc)" style="cursor: pointer;">
+          <td>{{ npc.firstName }}</td>
+          <td>{{ npc.lastName }}</td>
+          <td>{{ npc.occupation }}</td>
+        </tr>
+      </tbody>      
   </table>
-  
+</div>
